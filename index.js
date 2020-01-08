@@ -7,10 +7,16 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost/mine-sweeper", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(
+  process.env.MONGODB_URI,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  },
+  function(err) {
+    if (err) console.error("Could not connect to mongodb.");
+  }
+);
 //import des modèles
 const Beginner = require("./models/beginner");
 const Intermediate = require("./models/intermediate");
