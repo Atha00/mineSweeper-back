@@ -29,6 +29,6 @@ app.use(intermediateRoutes);
 
 app.use(expertRoutes);
 
-app.listen(3001, () => {
-  console.log(`Server started on port ${port}`);
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server started`);
 });
