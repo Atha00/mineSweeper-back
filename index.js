@@ -28,7 +28,7 @@ const intermediateRoutes = require("./routes/intermediate");
 const expertRoutes = require("./routes/expert");
 
 const port = 3002;
-
+console.log(port);
 app.use(beginnerRoutes);
 
 app.use(intermediateRoutes);
