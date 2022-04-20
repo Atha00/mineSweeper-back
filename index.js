@@ -11,9 +11,9 @@ mongoose.connect(
   process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   },
-  function(err) {
+  function (err) {
     if (err) console.error("Could not connect to mongodb.");
   }
 );
@@ -27,7 +27,7 @@ const beginnerRoutes = require("./routes/beginner");
 const intermediateRoutes = require("./routes/intermediate");
 const expertRoutes = require("./routes/expert");
 
-const port = 3001;
+const port = 3002;
 
 app.use(beginnerRoutes);
 
@@ -35,6 +35,6 @@ app.use(intermediateRoutes);
 
 app.use(expertRoutes);
 
-app.listen(process.env.PORT || 3001, () => {
+app.listen(process.env.PORT || 3002, () => {
   console.log(`Server started`);
 });
